@@ -25,7 +25,7 @@ async def vaccine_scan(session, url):
             elif (len(session_data['sessions'])) == 0:
                 print("No Slots available")
             else:
-                if (int(session_data['sessions'][0]['min_age_limit']) == 45):
+                if (int(session_data['sessions'][0]['min_age_limit']) == 18):
                     result_dict = {}
                     result_dict['Hostpital Name'] = session_data['sessions'][0]['name']
                     result_dict['Address'] = session_data['sessions'][0]['address']
@@ -54,7 +54,7 @@ async def main():
     async with aiohttp.ClientSession() as session:
 
         tasks = []
-        pin = '110001'
+        pin = '560100'
 #        start_date = datetime.date(2021,5,20)
         start_date = datetime.date.today()
 #        end_date = datetime.date(2021,9,30)
